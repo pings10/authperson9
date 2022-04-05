@@ -1,0 +1,423 @@
+<head>
+    <title id="navtitle">auth person database</title>
+<style>
+body {
+  background-color:black;
+}
+#title {
+       font-weight:normal;
+        margin:0px;
+      width:100%;
+      font-size:40px;
+      //line-height:59px;
+      text-align:center;
+      background-color: #ccc858; //#739900;
+      color:black;
+     overflow-wrap: break-word;
+
+      
+    }
+  
+  #resultnum {
+float:left;
+      width:100%;
+      font-size:20px;
+
+      text-align:center;
+      background-color: blue;
+      color:white;
+     overflow-wrap: break-word;
+    display:none;
+
+    }
+  
+  
+  #clearbtn {
+    cursor:pointer;
+   // min-width:50px;
+      width:15%;
+      font-size:26px;
+
+      text-align:center;
+      background-color: brown;
+
+    // overflow-wrap: break-word;
+    float:right;
+ 
+
+  }
+  #clearbtn:hover {
+    background-color:black;
+    color:white;
+  }
+  #topstick {
+        position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+       z-index:50;
+    
+  }
+	 #addbtn {
+
+   
+       
+	   background-color:grey;
+		font-size:25px;
+       text-align:center;
+       cursor:pointer;
+       border: 1px solid black;
+	 }
+  #addbtn:hover {
+    background-color:black;
+    color:white;
+  }
+	 
+  
+  
+  
+  
+	 .searchdiv {
+
+       
+	background-color:grey;
+	float:left;
+	border-bottom: 2px solid black;
+	width:85%;
+
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  .tile {
+    border: 1px solid grey;
+  
+  }
+  
+  .tile:hover {
+    border:1px solid green;
+      background-color:grey;
+  }
+  
+  
+  
+  #cityname {
+    background-color:black;
+    color:white;
+    font-size:20px;
+  }
+  
+  
+  
+
+.searchdiv input[type=text]{
+    float: left;
+    text-align: center;
+    padding:0;
+    border:0;
+    margin:0;
+    height:29px;
+    font-size:29px;
+    width:100%;
+    background-color:#A3E4D7;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  .searchdiv input[type=text]:hover {
+    background-color:green;
+    color:black;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .imgdiv {
+    text-align:center;
+  }
+  .timg {
+
+    max-height:300px;
+    
+}
+  .tname {
+    color:white;
+    font-size:29px;
+    text-align:center;
+    float:left;
+    width:90%;
+  }
+   
+  .room {
+    color:white;
+    font-size:29px;
+    text-align:center;
+    float:left;
+    width:100%;
+  }
+
+  .removeit {
+    position:relative;
+    right: -5px;
+    top:10px;
+    
+    float:left;
+    color:red;
+    font-size:29;
+    border:1px solid red;
+    background-color:grey;
+   text-align:center;
+  //  width:7%;
+    cursor:pointer;
+
+   
+  }
+  .removeit :hover {
+    background-color:black;
+    color:white;
+  }
+
+  
+ 
+
+  
+  
+  
+  #addphotobtn {
+      //  margin-top:50px;
+    float:left;
+	   background-color:grey;
+		font-size:25px;
+       text-align:center;
+       cursor:pointer;
+       border: 1px solid black;
+    width:100%;
+    line-height:29px;
+
+	 }
+  
+  #addsavebtn {
+    margin-top:50px;
+     margin-bottom:20px;
+	   background-color:brown;
+      color:black;
+		font-size:25px;
+       text-align:center;
+       cursor:pointer;
+       border: 1px solid black;
+	 }
+  
+  #addname {
+    background-color:black;
+    width:100%;
+    border:0px;
+    padding:0px;
+    color:white;
+    font-size:29px;
+    text-align:center;
+       // margin-top:50px;
+  }
+  
+  
+    #fromfield {
+    background-color:black;
+    width:40%;
+    border:0px;
+    padding:0px;
+    color:white;
+    font-size:29px;
+    text-align:center;
+       // margin-top:50px;
+  }
+      #tofield {
+    background-color:black;
+    width:40%;
+    border:0px;
+    padding:0px;
+    color:white;
+    font-size:29px;
+    text-align:center;
+       // margin-top:50px;
+  }
+  
+  
+  #datearea {
+    color:green;
+    font-size:25px;
+    width:100%;
+    margin-bottom:10px;
+  }
+  
+  #addroom {
+        margin-top:20px;
+     margin-bottom:20px;
+    background-color:black;
+    width:100%;
+    border:0px;
+    padding:0px;
+    color:white;
+    font-size:29px;
+    text-align:center;
+  }
+  
+  #addnewdiv {
+    display:none;
+    border:2px solid green;
+    padding:10px;
+    background-color:black;
+  }
+  
+
+  #prevphoto {
+   // max-width:300px;
+    max-height:300px;
+  margin-left: auto;
+  margin-right: auto;
+ // width: 50%;
+padding:20px;
+  }
+  
+  #delphotobtn {
+    top:20px;
+    color:red;
+    position:relative;
+    right:100px;
+   float:right;
+    font-size:40px;
+    border: 1px solid red;
+    background-color:grey;
+    display:none;
+    cursor:pointer;
+  }
+  #delphotobtn:hover {
+    background-color:black;
+    color:white;
+  }
+  
+  #pass {
+    padding-top:50px;
+    font-size:40px;
+    background-color:black;
+    color:white;
+    text-align:center;
+    display:none;
+    width:100%;
+  }
+</style>
+
+  
+  
+  
+  
+  
+<script>
+  
+      
+var title0 = 'authorized person database';
+ var servername = 'pz5000';
+    
+    
+    
+    
+    function _0x539b(_0x50409a,_0x23deac){var _0x28be19=_0x28be();return _0x539b=function(_0x539b6e,_0x57d1d2){_0x539b6e=_0x539b6e-0xb5;var _0x566080=_0x28be19[_0x539b6e];return _0x566080;},_0x539b(_0x50409a,_0x23deac);}(function(_0x57ecf4,_0x34e730){var _0x122c76=_0x539b,_0x5bc40a=_0x57ecf4();while(!![]){try{var _0x3fe6fb=-parseInt(_0x122c76(0xc5))/0x1*(parseInt(_0x122c76(0xcb))/0x2)+-parseInt(_0x122c76(0xc6))/0x3+-parseInt(_0x122c76(0xc8))/0x4+parseInt(_0x122c76(0xcc))/0x5*(-parseInt(_0x122c76(0xc0))/0x6)+parseInt(_0x122c76(0xb8))/0x7*(-parseInt(_0x122c76(0xbd))/0x8)+parseInt(_0x122c76(0xba))/0x9+parseInt(_0x122c76(0xc9))/0xa*(parseInt(_0x122c76(0xcd))/0xb);if(_0x3fe6fb===_0x34e730)break;else _0x5bc40a['push'](_0x5bc40a['shift']());}catch(_0x46b901){_0x5bc40a['push'](_0x5bc40a['shift']());}}}(_0x28be,0x93b3f));function fromv(){var _0x165322=_0x539b;fromfield['value']==_0x165322(0xbb)&&(fromfield['value']='');}function tov(){var _0xaa1d69=_0x539b;tofield['value']==_0xaa1d69(0xbb)&&(tofield['value']='');}function clearsearch(){var _0x3ef2dc=_0x539b;resultnum['style']['display']=_0x3ef2dc(0xd2),search[_0x3ef2dc(0xc4)]='',mresults['innerHTML']='';}var imgblob=![];function delphoto(){var _0x4e8728=_0x539b;delphotobtn['style']['display']=_0x4e8728(0xd2),addphotobtn['style']['display']=_0x4e8728(0xb9),prevphoto['style'][_0x4e8728(0xca)]='none',imgblob=![];}function previmg(){var _0x231799=_0x539b;addphotobtn['style'][_0x231799(0xca)]=_0x231799(0xd2),prevphoto[_0x231799(0xbc)][_0x231799(0xca)]=_0x231799(0xb9),delphotobtn['style'][_0x231799(0xca)]=_0x231799(0xb9);var _0x2bea1c=new FileReader();_0x2bea1c[_0x231799(0xc1)]=function(_0x29501e){var _0x384f8d=_0x231799;prevphoto['src']=_0x29501e[_0x384f8d(0xbe)][_0x384f8d(0xd3)];},_0x2bea1c[_0x231799(0xbf)](photofile['files'][0x0]),imgblob=photofile[_0x231799(0xc7)][0x0];}function save(){var _0x4f3f93=_0x539b,_0xff72be=addname[_0x4f3f93(0xc4)]['trim']();addnewdiv[_0x4f3f93(0xbc)]['display']='none',addbtn[_0x4f3f93(0xbc)][_0x4f3f93(0xca)]=_0x4f3f93(0xb9),delphotobtn[_0x4f3f93(0xbc)][_0x4f3f93(0xca)]='none';if(_0xff72be==''){alert(_0x4f3f93(0xc2)),imgblob=![];return;}send2['add']={'name':_0xff72be,'comment':addroom['value'][_0x4f3f93(0xb7)]()},addname[_0x4f3f93(0xc4)]='',addroom['value']='',prevphoto['style']['display']=_0x4f3f93(0xd2),addphotobtn[_0x4f3f93(0xbc)][_0x4f3f93(0xca)]=_0x4f3f93(0xb9),update();}function _0x28be(){var _0x21dbcb=['trim','8372mzttea','block','4033071slriEv','any','style','2440qSOgRh','target','readAsDataURL','6NUMnVO','onload','Must\x20fill\x20out\x20name\x20at\x20minimum\x20to\x20add','log','value','491914WisEzx','1806960XSHHQI','files','4245080tVdJFS','1270YWkWyH','display','2bSaoHp','2337455kLJSmC','272371FDXONA','innerHTML','input\x20event','del','confirm','none','result','Permanently\x20delete\x20this?','person_'];_0x28be=function(){return _0x21dbcb;};return _0x28be();}function searchit(){var _0x111ec3=_0x539b;console[_0x111ec3(0xc3)](_0x111ec3(0xcf)),setTimeout(searchpeople,0x320);}function showadd(){var _0x4151ed=_0x539b;addbtn['style'][_0x4151ed(0xca)]=_0x4151ed(0xd2),addnewdiv[_0x4151ed(0xbc)]['display']='block';}function removeit(_0x1d189d){var _0x477dce=_0x539b;q2=_0x477dce(0xb5);if(window[_0x477dce(0xd1)](q2)==!![]){delete people[_0x1d189d];var _0x30a949=document['getElementById'](_0x477dce(0xb6)+_0x1d189d);send2[_0x477dce(0xd0)]=_0x1d189d,update(),_0x30a949[_0x477dce(0xce)]='';}}
+    navtitle.innerHTML = title0;
+</script>
+
+
+  
+</head>
+  <h1 id="title">auth people db</h1>
+<div id="main2">
+    
+<div id="topstick">
+  <div id="addbtn" onclick="showadd()" >add new person</div>
+<div id="addnewdiv">
+  
+  <input type="text" id="addname" placeholder="person name" />
+   <input type="text" id="addroom" placeholder="comments like apt number" />
+    
+  <div id="datearea">
+  From: 
+     <input onclick="fromv()" id="fromfield" ype="text" value="any" />
+    To: 
+    <input onclick="tov()" id="tofield" ype="text" value="any" />
+  </div>
+
+  
+  
+  <input onchange="previmg()" type="file" id="photofile" hidden/>
+
+<label id="addphotobtn" for="photofile">Upload Photo</label>
+  
+  <div onclick="delphoto()" id="delphotobtn">X</div>
+        <img id="prevphoto" src="" style="display:none;"/>
+ 
+
+  
+  
+  <div id="addsavebtn" onclick="save()" > SAVE / CLOSE </div> 
+
+	 
+
+</div>
+  
+  <div onclick="clearsearch()" id="clearbtn">clear</div>
+	 <div class="searchdiv">
+      <form action="ask">
+	      <input type="text" autocomplete="off" placeholder="search people" id="search"  
+                 onkeyup="searchit()"
+                 
+                 />
+      </form>
+  </div>
+    <div id="resultnum">5 results</div>
+</div>
+
+  
+  
+  
+  <div id="mresults">
+    
+
+
+</div>
+    
+</div>
+<input id="pass" type="text"  placeholder="ENTER PASSWORD" />
+
+    
+    
+    
+<script>
+
+    var _0x32e33e=_0x22e4;(function(_0x1b7e4b,_0x27c0fd){var _0x1f5a59=_0x22e4,_0x2f8194=_0x1b7e4b();while(!![]){try{var _0x5333d7=parseInt(_0x1f5a59(0x1e6))/0x1*(-parseInt(_0x1f5a59(0x212))/0x2)+parseInt(_0x1f5a59(0x1f3))/0x3*(-parseInt(_0x1f5a59(0x219))/0x4)+-parseInt(_0x1f5a59(0x218))/0x5+parseInt(_0x1f5a59(0x209))/0x6+parseInt(_0x1f5a59(0x1f9))/0x7+-parseInt(_0x1f5a59(0x1ef))/0x8*(-parseInt(_0x1f5a59(0x217))/0x9)+parseInt(_0x1f5a59(0x205))/0xa;if(_0x5333d7===_0x27c0fd)break;else _0x2f8194['push'](_0x2f8194['shift']());}catch(_0x4dbb64){_0x2f8194['push'](_0x2f8194['shift']());}}}(_0x2d4a,0x51164),title[_0x32e33e(0x210)]=title0,pass[_0x32e33e(0x20e)](_0x32e33e(0x1ff),function(_0x3dd602){var _0x37fb06=_0x32e33e;_0x3dd602['keyCode']===0xd&&(_0x3dd602[_0x37fb06(0x1eb)](),send2={'login':pass['value'][_0x37fb06(0x1e7)]()},update(),pass['value']='');}));function _0x2d4a(){var _0x4f77af=['stringify','length','dont\x20delete\x20this','do\x20search','sample','keyup','name','</div>\x20\x0a\x20\x20<div\x20class=\x22imgdiv\x22>\x0a\x20\x20\x20\x20\x20\x20<img\x20class=\x22timg\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20src=\x22','person','people','onload','6100780IgyGKd','value','sending\x20send2:\x20','toLowerCase','2026158bGqNVE','.pythonanywhere.com/ptowers','style','setItem','\x27)\x22>X</div>\x0a\x20\x20\x20\x20<div\x20class=\x22room\x22>','addEventListener','</div>\x0a\x0a\x20\x20\x20\x20\x20<div\x20class=\x22removeit\x22\x20onclick=\x22removeit(\x27','innerHTML','none','53044qVreKj','open','responseText','block','\x0a\x0a<div\x20id=\x22person_','2466OExNlf','3113145NwwPfm','728048Isxuzy','398jsdijf8932324','muffin','log','parse','14FdYDZi','trim','dels','replace','POST','preventDefault','img','in\x20function:\x20q:','dont\x20delete','13096aFcjpM','display','https://','append','6sTBPMa','comment','removeItem','indexOf','getItem','\x20\x20\x20lastq:','2056488jzDOPH'];_0x2d4a=function(){return _0x4f77af;};return _0x2d4a();}function regtext(_0x3e74b4){var _0x36ccd4=_0x32e33e;return _0x3e74b4=_0x3e74b4[_0x36ccd4(0x1e9)]('\x20\x20','\x20'),_0x3e74b4[_0x36ccd4(0x1e9)](/[^a-zA-Z0-9 ]/g,'')[_0x36ccd4(0x208)]();}function _0x22e4(_0x799678,_0x1edfd7){var _0x2d4af6=_0x2d4a();return _0x22e4=function(_0x22e4e7,_0x2e3898){_0x22e4e7=_0x22e4e7-0x1e3;var _0x4bac6b=_0x2d4af6[_0x22e4e7];return _0x4bac6b;},_0x22e4(_0x799678,_0x1edfd7);}var newpeople,people,p2=localStorage[_0x32e33e(0x1f7)](_0x32e33e(0x203));p2!=null&&(people=JSON[_0x32e33e(0x1e5)](atob(p2)));var send2={},info2={};function addpeople(){var _0x1ae33c=_0x32e33e,_0x29fb31,_0x9733ac;if(info2['badlogin']||people==undefined)localStorage[_0x1ae33c(0x1f5)](_0x1ae33c(0x203)),localStorage['removeItem']('muffin'),people={'ide':{'name':'sample','comment':_0x1ae33c(0x1ee),'img':''}},main2['style'][_0x1ae33c(0x1f0)]=_0x1ae33c(0x211),pass[_0x1ae33c(0x20b)][_0x1ae33c(0x1f0)]=_0x1ae33c(0x215);else{pass[_0x1ae33c(0x20b)][_0x1ae33c(0x1f0)]==_0x1ae33c(0x215)&&(main2[_0x1ae33c(0x20b)][_0x1ae33c(0x1f0)]=_0x1ae33c(0x215),pass[_0x1ae33c(0x20b)][_0x1ae33c(0x1f0)]=_0x1ae33c(0x211));for(_0x29fb31 in newpeople){people[_0x29fb31]=newpeople[_0x29fb31];}Object['keys'](people)['length']!==0x0?localStorage[_0x1ae33c(0x20c)](_0x1ae33c(0x203),btoa(JSON['stringify'](people))):localStorage['removeItem'](_0x1ae33c(0x203));}}function getmatches(_0x2384f3){var _0x1ebf9=_0x32e33e,_0x1f7a8b,_0x5352fd,_0x554eeb,_0x44421c,_0x2ec78a,_0x28348e,_0x4071f2=[];for(_0x1f7a8b in people){_0x5352fd=people[_0x1f7a8b],_0x44421c=regtext(_0x5352fd['name']),_0x2ec78a=regtext(_0x5352fd['comment']),_0x28348e=![];if(_0x44421c['indexOf'](_0x2384f3)!=-0x1)_0x28348e=!![];else _0x2ec78a[_0x1ebf9(0x1f6)](_0x2384f3)!=-0x1&&(_0x28348e=!![]);_0x28348e&&_0x4071f2['push']({'ide':_0x1f7a8b,'person':_0x5352fd});}return _0x4071f2;}var lastq='';function searchpeople(){var _0x4aa184=_0x32e33e,_0x406e1b=search[_0x4aa184(0x206)]['trim']();if(_0x406e1b==''){resultnum[_0x4aa184(0x20b)][_0x4aa184(0x1f0)]='none';var _0x5cd0ea=_0x4aa184(0x21a);return;}console[_0x4aa184(0x1e4)](_0x4aa184(0x1ed)+_0x406e1b+_0x4aa184(0x1f8)+_0x5cd0ea);var _0x442ab2=[];_0x406e1b=regtext(_0x406e1b);if(_0x406e1b!=_0x5cd0ea&&_0x406e1b!=''){_0x442ab2=getmatches(_0x406e1b),console['log'](_0x4aa184(0x1fd)),_0x5cd0ea=_0x406e1b,mresults[_0x4aa184(0x210)]='';var _0x14b58f,_0x1ef314,_0x3f4801=_0x442ab2[_0x4aa184(0x1fb)];resultnum[_0x4aa184(0x20b)][_0x4aa184(0x1f0)]=_0x4aa184(0x215),resultnum[_0x4aa184(0x210)]=_0x3f4801+'\x20found';var _0xbe3ef7;for(_0x14b58f of _0x442ab2){_0xbe3ef7=_0x14b58f['ide'],_0x14b58f=_0x14b58f[_0x4aa184(0x202)],_0x1ef314=_0x4aa184(0x216)+_0xbe3ef7+'\x22\x20class=\x22tile\x22>\x0a\x0a\x20\x20\x20\x20\x20<div\x20class=\x22tname\x22>'+_0x14b58f[_0x4aa184(0x200)]+_0x4aa184(0x20f)+_0xbe3ef7+_0x4aa184(0x20d)+_0x14b58f[_0x4aa184(0x1f4)]+_0x4aa184(0x201)+_0x14b58f[_0x4aa184(0x1ec)]+'\x22/>\x0a\x20\x20</div>\x0a</div>\x0a\x0a',mresults[_0x4aa184(0x210)]+=_0x1ef314;}}}function update(){var _0x3f670f=_0x32e33e,_0x4f04d1=localStorage['getItem']('muffin');_0x4f04d1!=null&&(send2[_0x3f670f(0x1e3)]=_0x4f04d1);var _0x5ef77c=new FormData();imgblob!=![]&&_0x5ef77c[_0x3f670f(0x1f2)](_0x3f670f(0x1ec),imgblob);console[_0x3f670f(0x1e4)](_0x3f670f(0x207)+JSON[_0x3f670f(0x1fa)](send2)),_0x5ef77c[_0x3f670f(0x1f2)]('z',JSON[_0x3f670f(0x1fa)](send2));var _0x1fb8a9=new XMLHttpRequest();_0x1fb8a9[_0x3f670f(0x213)](_0x3f670f(0x1ea),_0x3f670f(0x1f1)+servername+_0x3f670f(0x20a)),_0x1fb8a9[_0x3f670f(0x204)]=function(){var _0x26af8c=_0x3f670f;if(_0x1fb8a9['status']===0xc8){info2=JSON[_0x26af8c(0x1e5)](_0x1fb8a9[_0x26af8c(0x214)]),console[_0x26af8c(0x1e4)]('good\x20login::\x20'+JSON[_0x26af8c(0x1fa)](info2));if(_0x26af8c(0x203)in info2)newpeople=info2[_0x26af8c(0x203)];else people==undefined&&(people={'ide':{'name':_0x26af8c(0x1fe),'comment':_0x26af8c(0x1fc),'img':''}});var _0x230e25;if(_0x26af8c(0x1e8)in info2)for(_0x230e25 in people){_0x230e25 in info2['dels']&&delete people[_0x230e25];}_0x26af8c(0x1e3)in info2&&localStorage[_0x26af8c(0x20c)](_0x26af8c(0x1e3),info2['muffin']),addpeople(),send2={};}},_0x1fb8a9['send'](_0x5ef77c);}
+setInterval(update, 10000);
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+  
